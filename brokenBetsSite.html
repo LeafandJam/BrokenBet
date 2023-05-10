@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> 
+    <title>Broken Bets</title>
+</head>
+<body>
+    <py-script>
+        
+        print('''██████╗ ██████╗  ██████╗ ██╗  ██╗███████╗███╗   ██╗    ██████╗ ███████╗████████╗███████╗
+        ██╔══██╗██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝████╗  ██║    ██╔══██╗██╔════╝╚══██╔══╝██╔════╝
+        ██████╔╝██████╔╝██║   ██║█████╔╝ █████╗  ██╔██╗ ██║    ██████╔╝█████╗     ██║   ███████╗
+        ██╔══██╗██╔══██╗██║   ██║██╔═██╗ ██╔══╝  ██║╚██╗██║    ██╔══██╗██╔══╝     ██║   ╚════██║
+        ██████╔╝██║  ██║╚██████╔╝██║  ██╗███████╗██║ ╚████║    ██████╔╝███████╗   ██║   ███████║
+        ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝    ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝
+                                                                                                
+        
+        ''')
+
+        calc = input("Welcome to Broken Bets! \nBegin calculations? [y/n]")
+        if calc == 'y':
+            game = True
+        else:
+            print('Bruh')
+        
+        
+        while game == True:
+        
+            oddHi = float(input('What is the highest odd? '))
+            oddLo = float(input('What is the lowest odd? '))
+            bonusMoney = int(input('What is the amount of bonus money? '))
+        
+            investment = ((oddHi * bonusMoney) - bonusMoney) / oddLo
+        
+            profit1 = ((oddHi * bonusMoney) - bonusMoney) - investment
+            profit2 = (oddLo * investment) - investment
+        
+            print('\n\nYou must put in $',investment,'.')
+            print('\nThe profit is:\n $', profit1,'\n $',profit2)
+        
+            calc2 = input('\n\n Would you like to calculate another game? [y/n] ')
+            if calc2 != 'y':
+                print("Good luck!")
+                game = False
+        
+        
+        
+        
+    </py-script>
+</body>
+</html>
