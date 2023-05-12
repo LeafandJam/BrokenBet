@@ -101,6 +101,8 @@ Exit                [e]
             exit
 
     while mode == 'profit':
+
+        print("\nCalculate how much money you need to pay your partner or vice versa.\n")
         gameOne = float(input('How much TOTAL did you make from Game #1? $'))
         gameTwo = float(input('How much TOTAL did you make from Game #2? $'))
         ownMoney = int(input('How much of your personal money did you put in? $'))
