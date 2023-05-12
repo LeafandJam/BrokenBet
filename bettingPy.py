@@ -15,10 +15,10 @@ mode = 'mainMenu'
 while mode == 'mainMenu':
     print('Welcome to Broken Bets!\n')
     print('''
-game calculations   [g]
-profit calculations [p]
-bookmarks           [b]
-exit                [e]
+Game calculations   [g]
+Profit calculations [p]
+Bookmarks           [b]
+Exit                [e]
 ''')
           
     options = ['g','p','e','b']
@@ -114,7 +114,7 @@ exit                [e]
             totalPay = (((gameOne + gameTwo) - (ownMoney + otherPersonsMoney)) /2) + otherPersonsMoney
             print('\nYour partner must send $',totalPay,' to you. You don\'t have to send anything (you lost both games).')
             profit = totalPay-otherPersonsMoney
-            print('\n You made $',profit,' PROFIT')
+            print('\nYou made $',profit,' PROFIT')
 
 
 
@@ -132,7 +132,7 @@ exit                [e]
              totalPay = (((gameOne + gameTwo) - (ownMoney + otherPersonsMoney)) /2) + otherPersonsMoney
              print('\nYou must send $',totalPay,' to the other person. They will not send you any (you won both games).')
              profit = totalPay-otherPersonsMoney
-             print('\n You made $',profit,' PROFIT')
+             print('\nYou made $',profit,' PROFIT')
 
 
         mode = exit
