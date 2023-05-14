@@ -119,7 +119,7 @@ Exit                [e]
 
 
         elif gameOne == 0 and gameTwo > 0:
-             totalPay = gameTwo - ownMoney
+             totalPay = gameTwo - ownMoney / 2
              print('\nYou must send $',totalPay,' to the other person. They must send you money as well (it may be a different amount).')
 
         elif gameOne > 0 and gameTwo == 0:
