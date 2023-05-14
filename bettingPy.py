@@ -105,7 +105,7 @@ Exit                [e]
         print("\nCalculate how much money you need to pay your partner or vice versa.\n")
         gameOne = float(input('How much TOTAL did you make from Game #1? $'))
         gameTwo = float(input('How much TOTAL did you make from Game #2? $'))
-        ownMoney = int(input('How much of your personal money did you put in? $'))
+        ownMoney = int(input('How much of your personal money did you put in? (Do NOT include bonus money) $'))
         
         if gameOne == 0 and gameTwo == 0:
             print('\nYou lost both. Continue to calculate how much your partner owes you.\n')
@@ -120,14 +120,33 @@ Exit                [e]
 
 
 
-        elif gameOne == 0 and gameTwo > 0:
-             totalPay = gameTwo - ownMoney / 2
-             print('\nYou must send $',totalPay,' to the other person. They must send you money as well (it may be a different amount).')
+        elif gameOne == 0 and gameTwo > 0 or gameTwo == 0 and gameOne > 0:
+            if gameOne > 0:
+                 game = gameOne
+            else: game = gameTwo
 
-        elif gameOne > 0 and gameTwo == 0:
-             totalPay = (gameOne - ownMoney) / 2
-             print('\nYou must send $',totalPay,' to the other person. They must send you money as well (it may be a different amount).')
-        
+            profitOwn = game - ownMoney
+            otherWin = float(input('How much did your PARTNER win from their winning game? $'))
+            otherMoney = float(input('How much of their OWN money did your PARTNER put in? $'))
+            profitOther = otherWin - otherMoney
+
+            if profitOther > profitOwn:
+                profitHigh = profitOther
+                profitLow = profitOwn
+                payout = (profitHigh - profitLow) / 2
+                print('\n\nYour partner must send you: $',payout)
+                print('\nYour partner made more profit than you. You don\'t have to send them anything.\n\n')
+            else: 
+                profitHigh = profitOwn
+                profitLow = profitOther
+                payout = (profitHigh - profitLow) / 2
+                print('\n\nYou must send your partner: $',payout)
+                print('\nYou made more profit than your partner. They won\'t send you anything.\n\n')
+
+            mode = 'mainMenu'
+
+
+
         elif gameOne > 0 and gameTwo > 0:
              otherPersonsMoney = int(input('How much of their own money did your betting partner put in? $'))
 
